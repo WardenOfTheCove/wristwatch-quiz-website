@@ -1,8 +1,11 @@
+'use client'
+
 import React from 'react';
 import IconButton from './homeButton'
+import Quiz from './quiz/page'
+import Link from 'next/link'
 
-
-function Home() {
+export default function Home() {
   return (
       <main className="bg-gray-900 h-full w-full absolute">
         <div className="flex flex-col justify-center text-center font-[Inter] text-white">
@@ -32,10 +35,10 @@ function Home() {
             </div>
 
           </div>
+          <Link href="/quiz">
           <button className="rounded-xl mx-auto my-5 p-3 bg-amber-500 duration-150 hover:bg-amber-600 hover:duration-150 hover:cursor-pointer border-solid border-2 border-amber-600 hover:border-amber-700">Take Watch Quiz</button>
+          </Link>
         </div>
       </main>
   );
 }
-
-export default Home;
