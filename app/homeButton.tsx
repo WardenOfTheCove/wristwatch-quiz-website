@@ -3,7 +3,7 @@ import Link from 'next/link'
 import favicon from './favicon.ico'
 import React from 'react'
 
-function IconButton() {
+export default function IconButton() {
   return(
     <Link href='https://wardenofthecove-github-io.vercel.app/' target='_blank' rel='noopener noreferrer'>
       <button className="p-3 hover:cursor-pointer">
@@ -13,4 +13,3 @@ function IconButton() {
   );
 }
 
-export default IconButton;

@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What type of activities will you be doing while wearing your watch?",
+        "options": [
+            "Physical",
+            "Mental",
+            "Mix of both"
+        ]
+    },
+    {
+        "question": "What watch movement would you prefer?",
+        "options": [
+            "Mechanical",
+            "Automatic",
+            "Quartz/Battery"
+        ]
+    },
+    {
+        "question": "What is type of watch do you prefer?",
+        "options": [
+            "Digital",
+            "Analog",
+            "Mix of both"
+        ]
+    },
+    {
+        "question": "Do you want a lot of features/complications for your watch?",
+        "options": [
+            "Yes",
+            "No",
+            "Just a few simple ones"
+        ]
+    },
+    {
+        "question": "Does your watch need to be waterproof?",
+        "options": [
+            "Yes",
+            "No",
+            "Water resistant is fine"
+        ]
+    },
+    {
+        "question": "What is your budget?",
+        "options": [
+            "under $100",
+            "$100-$750",
+            "$750+"
+        ]
+    }
+]
