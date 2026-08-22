@@ -4,17 +4,41 @@ import React from 'react'
 import IconButton from '../homeButton'
 import parseJson from './parseJson'
 import Link from 'next/link'
+import ArrowBackIos from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos';
 
-
-var counter = 0;
+var counter: number = 0;
 var quizComponents = parseJson(counter);
-var answers: number[] = [];
+export var answers: number[] = [];
 
 function changeNextQuestion() {
     document.getElementById("question")!.innerHTML = quizComponents.question;
     document.getElementById("option1")!.innerHTML = quizComponents.option1;
     document.getElementById("option2")!.innerHTML = quizComponents.option2;
     document.getElementById("option3")!.innerHTML = quizComponents.option3;
+}
+
+function arrowButtons(direction: boolean) {
+    if(direction) {
+        if(counter < 3) {
+            counter += 1;
+            quizComponents = parseJson(counter);
+            changeNextQuestion();
+        } else {
+            window.location.href='/answer';
+        }
+    } else {
+        if(counter === 0) {
+            window.location.href = '/';
+        } else {
+            counter -= 1;
+            quizComponents = parseJson(counter);
+            while(answers.length > counter) {
+                answers.pop();
+            }
+            changeNextQuestion();
+        }
+    }
 }
 
 function clickEvent(option: number) {
@@ -24,7 +48,9 @@ function clickEvent(option: number) {
         quizComponents = parseJson(counter);
         changeNextQuestion();
     } else {
-        alert("Quiz completed! Here are your answers: " + answers.join(", "));
+        answers.push(option);
+        alert("Here are your answers: " + answers.join(", "));
+        window.location.href='/answer';
     }
 }
 
@@ -46,8 +72,9 @@ export default function Quiz() {
                     {quizComponents.option3}
                 </button>
             </div>
-            <div className="my-[20%]">
-
+            <div className="my-[5%] mx-[20%] text-center">
+                <button className="duration-100 hover:duration-100 hover:cursor-pointer px-15" onClick={() => arrowButtons(false)}><ArrowBackIos /></button>
+                <button className="duration-100 hover:duration-100 hover:cursor-pointer px-15" onClick={() => arrowButtons(true)}><ArrowForwardIos /></button>
             </div>
         </main>
     );

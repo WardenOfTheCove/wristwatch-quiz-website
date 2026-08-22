@@ -8,15 +8,7 @@
         ]
     },
     {
-        "question": "What watch movement would you prefer?",
-        "options": [
-            "Mechanical",
-            "Automatic",
-            "Quartz/Battery"
-        ]
-    },
-    {
-        "question": "What is type of watch do you prefer?",
+        "question": "What is type of watch display do you prefer?",
         "options": [
             "Digital",
             "Analog",
